@@ -1,12 +1,13 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import TarefaEntrada from './TarefaEntrada'
 
 
 const App = () => {
     return (
             <div className='container mt-4'>
+                 <TarefaEntrada></TarefaEntrada>
                 <div className='row'>
-                    <div className='col-sm-12 col-lg-10 col-xxl-8 mx-auto'>
+                    <div className='col-sm-12 col-md-10 mx-auto'>
                         <div className="card">
                             <h1 className='display-5 text-center'>
                                 Hello, tarefas
