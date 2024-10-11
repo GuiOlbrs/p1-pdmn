@@ -2,17 +2,29 @@ import React from 'react'
 import TarefaEntrada from './TarefaEntrada'
 import TarefaLista from './TarefaLista'
 
+export default class App extends React.Component {
+    
+    state ={
+        tarefas:[]
+    }
 
-const App = () => {
-    return (
+    onTarefaCadastrada = async (tarefa) => {
+
+        if (tarefa !== ""){
+            this.setState({tarefas:[...this.state.tarefas,tarefa]})
+        }
+    }
+
+    render(){         
+        return (
             <div className='container mt-4'>
                 <div className='row'>
-                    <TarefaEntrada></TarefaEntrada>
+                    <TarefaEntrada onTarefaCadastrada={this.onTarefaCadastrada}/>
                 </div>
                 <div className='row'>
-                    <TarefaLista></TarefaLista>
+                    <TarefaLista tarefas={this.state.tarefas}/>
                 </div>
             </div>   
-        )
-    }
-export default App
+        )}  
+}
+
